@@ -1,0 +1,25 @@
+<div class="level-item">
+  <!-- ICON -->
+  <div class="level-item-icon">
+    <div>&#xe8a1;</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="level-item-main">
+    <div class="level-item-main-title">
+      {{ data.name || "" }}
+    </div>
+    <div class="level-item-main-values">
+      <div *ngFor="let value of values; index as idx" class="values">
+        {{ value.title }}
+        <div [class]="value.color">{{ value.value }}</div>
+      </div>
+    </div>
+  </div>
+  <!-- TOTAL -->
+  <div class="level-item-total">
+    <div class="level-item-total-quantity">
+      {{ data.total }}
+    </div>
+  </div>
+</div>

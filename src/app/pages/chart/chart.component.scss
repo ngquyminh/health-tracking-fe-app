@@ -1,0 +1,9 @@
+
+.test-modal-wrapper {
+  color: red;
+  &::ng-deep {
+    .mat-dialog-container {
+      padding: 0;
+    }
+  }
+}

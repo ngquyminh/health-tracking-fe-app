@@ -1,0 +1,31 @@
+<div class="inner-header">
+  <div class="inner-header-left">
+    <button class="inner-header-title b" (click)="newsFeedClick()">
+      HT Service
+    </button>
+  </div>
+  <div class="inner-header-right">
+    <button
+      class="inner-header-create-post nor-btn"
+      (click)="onClickOverallStatus()"
+    >
+      Overall
+    </button>
+
+    <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+      <button
+        type="button"
+        id="dropdownManual"
+        class="inner-header-email"
+        ngbDropdownAnchor
+        (focus)="myDrop.open()"
+      >
+        {{ userName }}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownManual">
+        <button ngbDropdownItem (click)="yourPage()">Your page</button>
+        <button ngbDropdownItem (click)="logout()">Log out</button>
+      </div>
+    </div>
+  </div>
+</div>

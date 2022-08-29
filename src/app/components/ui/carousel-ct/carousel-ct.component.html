@@ -1,0 +1,11 @@
+<ngb-carousel *ngIf="images?.length !== 0" [interval]="8 * 1000">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="picsum-img-wrapper">
+      <img [src]="image" alt="Random slide" />
+    </div>
+    <div class="carousel-caption">
+      This carousel hides navigation arrows and indicators.
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div *ngIf="loading"><mat-spinner></mat-spinner></div>

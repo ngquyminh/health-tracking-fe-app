@@ -1,0 +1,42 @@
+<div class="login">
+  <div class="login-body">
+    <div class="login-body-left">
+      <img
+        src="assets/tracker.png"
+        alt="Logo icon"
+        title="Logo"
+        class="login-body-logo"
+      />
+    </div>
+    <div class="login-body-right">
+      <div class="login-body-right-top">
+        <img
+          src="assets/hat_2.png"
+          alt="Logo icon"
+          title="Logo"
+          class="login-body-logo"
+        />
+      </div>
+
+      <div class="login-body-right-bottom">
+        <div [ngSwitch]="currentPage">
+          <app-sign-up
+            *ngSwitchCase="'SIGN_UP'"
+            (onClickSignIn)="onClickSignIn()"
+          ></app-sign-up>
+
+          <app-forgot-password
+            *ngSwitchCase="'FORGOT_PASSWORD'"
+            (onClickSignIn)="onClickSignIn()"
+          ></app-forgot-password>
+
+          <app-sign-in
+            *ngSwitchDefault
+            (onClickSignUp)="onClickSignUp()"
+            (onClickForgot)="onClickForgot()"
+          ></app-sign-in>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

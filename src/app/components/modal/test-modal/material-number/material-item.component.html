@@ -1,0 +1,48 @@
+<button
+  class="material-item"
+  [ngClass]="{
+    'material-item-active': isSelected,
+    'material-item-hoverable': level === 0
+  }"
+  (click)="onClickMaterialItem()"
+>
+  <!-- STATUS ICON -->
+  <div class="material-item-status">
+    <div class="icon-btn-ic">&#xe8a1;</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="material-item-main">
+    <!-- PART NUMBER -->
+    <div class="material-item-main-pn">
+      {{ partNumber || levelTitle }}
+    </div>
+    <!-- DESCRIPTION -->
+    <div *ngIf="description" class="material-item-main-des">
+      {{ description }}
+    </div>
+  </div>
+
+  <!-- QUANTITY -->
+  <div class="material-item-quantity">
+    <!-- NUMBER -->
+    <div class="material-item-quantity-number">
+      {{ quantity || total }}
+    </div>
+    <!-- ICON -->
+    <div class="material-item-quantity-icon">
+      <div *ngIf="level === 0">
+        {{ isSelected ? "<" : ">" }}
+      </div>
+      <div *ngIf="level !== 0">
+        {{ toggleDetail ? "v" : "^" }}
+      </div>
+    </div>
+  </div>
+</button>
+
+<div *ngIf="toggleDetail" class="material-item-details">
+  <div *ngFor="let item of lvData; index as idx">
+    <app-level-item [data]="item" [level]="level"></app-level-item>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="bmi-card" (click)="onCardClick()">
+  <div class="bmi-card-head">Body Mass Index (BMI)</div>
+  <div class="bmi-card-body">
+    <div class="bmi-card-body-left">
+      <div class="bmi-card-body-bmi">{{ rate }}</div>
+    </div>
+
+    <div class="bmi-card-body-right">You’re {{ status }}</div>
+  </div>
+  <div class="bmi-card-low-body">
+    <div class="bmi-card-wh">
+      Height: <b>{{ height }}</b> cm
+    </div>
+    <div class="bmi-card-wh">
+      Weight: <b>{{ weight }}</b> kg
+    </div>
+  </div>
+  <div class="bmi-card-foot">
+    <div class="bmi-card-foot-slider">
+      <img
+        class="bmi-card-foot-pin"
+        src="assets/pin.png"
+        title="Pin"
+        [ngStyle]="{ left: calculatedLeft }"
+      />
+    </div>
+    <div class="bmi-card-foot-scaler">
+      <div *ngFor="let item of bmiSlider">
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</div>

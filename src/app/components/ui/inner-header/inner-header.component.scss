@@ -1,0 +1,30 @@
+@import "../../../styles/colors";
+
+.inner-header {
+  height: 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #B25068;
+  border-bottom: 1px solid black;
+  button {
+    // color: $yellow_1;
+    color: black;
+  }
+  &-title,
+  &-email {
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  &-left {
+  }
+  &-right {
+    display: flex;
+    flex-direction: row;
+  }
+  &-create-post {
+    margin-right: 2rem;
+  }
+}

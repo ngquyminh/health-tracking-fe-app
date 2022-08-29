@@ -1,0 +1,26 @@
+<div class="sign-in">
+  <!-- {{ signInForm.value | json }} -->
+  <form
+    [formGroup]="signInForm"
+    (ngSubmit)="onFormSubmit()"
+    class="sign-in-form"
+  >
+    <label>Username</label>
+    <input formControlName="username" title="username" />
+    <div class="err-mes">{{ usernameErr }}</div>
+
+    <label>Password</label>
+    <input formControlName="password" type="password" title="password" />
+    <div class="err-mes">{{ passwordErr }}</div>
+
+    <button mat-raised-button type="submit" class="sign-in-btn">Sign in</button>
+
+    <div class="sign-in-footer">
+      <button mat-button (click)="forgot()" type="button">
+        Forgot password
+      </button>
+
+      <button mat-button (click)="signUp()" type="button">Sign up</button>
+    </div>
+  </form>
+</div>

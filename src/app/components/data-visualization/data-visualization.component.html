@@ -1,0 +1,31 @@
+<div class="data-visual">
+
+    <div class="data-visual-datepicker">
+        <div class="data-visual-datepicker-actual-picker">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                    <input matStartDate (dateChange)="onStartedDateChange($event)" placeholder="Start date">
+                    <input matEndDate (dateChange)="onEndedDateChange($event)" placeholder="End date">
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+        </div>
+
+        <div class="data-visual-datepicker-get-button">
+            <button [disabled]="chosenStartedDate === '2022-05-24' && chosenEndedDate === '2022-12-30'"
+                mat-stroked-button color="primary" (click)="getActivityDataInTimeRange(userId)" color="primary">Get
+                Data</button>
+        </div>
+    </div>
+
+    <div class="data-visual-data-canvas">
+        <canvas id="myChart"></canvas>
+    </div>
+    <!-- <div class="data-visual-edit-side">
+        <app-edit-page></app-edit-page>
+    </div> -->
+    <!-- <app-inner-footer></app-inner-footer> -->
+</div>

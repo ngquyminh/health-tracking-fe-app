@@ -1,0 +1,59 @@
+<form *ngIf="onShowForm" name="editForm" novalidate #editForm="ngForm">
+    <h2>Edit:</h2>
+    <div>
+        <div class="form-group">
+            <label for="_id">ID</label>
+            <input type="text" class="form-control" id="_id" name="_id" [(ngModel)]="currentItem._id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_type">Activity Type</label>
+            <input type="text" class="form-control" name="activityType" id="field_type" [(ngModel)]="currentItem.activityType" readonly/>
+        </div>
+        <!-- <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ppcGatewayApp.ppccurrentItem.colorCode"
+                for="field_colorCode">Color Code</label>
+            <input type="text" class="form-control" name="colorCode" id="field_colorCode"
+                [(colorPicker)]="currentItem.colorCode" [(ngModel)]="currentItem.colorCode"
+                [style.background]="currentItem?.colorCode ? currentItem.colorCode : 'unset'"
+                [cpOutputFormat]="'rgba'" [cpPosition]="'bottom'" />
+        </div> -->
+        <div class="form-group">
+            <label class="form-control-label"
+                for="field_duration">Duration</label>
+            <input type="text" class="form-control" name="duration" id="field_duration"
+                [(ngModel)]="currentItem.duration" />
+        </div>
+
+        <div class="form-group" *ngIf="currentItem.activityType === 'sleeping'">
+            <mat-label class="form-control-label"
+                for="field_sleep_rate">Sleep Rate</mat-label>
+            <!-- <input type="text" class="form-control" name="duration" id="field_duration"
+                [(ngModel)]="currentItem.duration" /> -->
+
+                <mat-select [(ngModel)]="currentItem.sleepRate" matNativeControl required>
+                    <mat-option *ngFor="let rate of sleepRateOptions">{{ rate }}</mat-option>
+                  </mat-select>
+        </div>
+
+        <!-- <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ppcGatewayApp.ppccurrentItem.currentPlant"
+                for="field_currentPlant">Current Plant</label>
+            <select class="form-control" id="field_currentPlant" name="currentPlant"
+                [(ngModel)]="currentItem.currentPlant">
+                <option [ngValue]="null"></option>
+                <option
+                    [ngValue]="plantOption.id === currentItem.currentPlant?.id ? currentItem.currentPlant : plantOption"
+                    *ngFor="let plantOption of plants; trackBy: trackPlantById">{{plantOption.plantId}}</option>
+            </select>
+        </div> -->
+    </div>
+    <!-- <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+            <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary"
+            [jhiHasPermission]="PERMISSIONS" [clickEvent]="saveFunc">
+            <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div> -->
+</form>

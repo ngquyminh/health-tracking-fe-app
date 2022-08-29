@@ -1,0 +1,19 @@
+<div class="activity-card">
+  <div class="activity-card-head">
+    <container-element [ngSwitch]="type">
+      <img *ngSwitchCase="SLEEP" src="assets/sleeping.svg" title="Activity" />
+    </container-element>
+    <div class="activity-card-head-title">
+      {{ title }}
+    </div>
+  </div>
+  <div class="activity-card-graph">
+    <container-element [ngSwitch]="type">
+      <img
+        *ngSwitchCase="SLEEP"
+        src="assets/sleeping_graph.svg"
+        title="Statistic Record"
+      />
+    </container-element>
+  </div>
+</div>

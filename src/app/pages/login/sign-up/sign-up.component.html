@@ -1,0 +1,39 @@
+<div class="sign-up">
+  <form
+    [formGroup]="signUpForm"
+    (ngSubmit)="onFormSubmit()"
+    class="sign-up-form"
+  >
+    <label>Email</label>
+    <input formControlName="email" title="email" />
+    <div class="err-mes">{{ emailErr }}</div>
+
+    <label>Password</label>
+    <input formControlName="password" type="password" title="password" />
+    <div class="err-mes">{{ passwordErr }}</div>
+
+    <!-- <label>Confirm password</label>
+    <input formControlName="confirmPassword" type="password" title="confirmPassword" />
+    <div class="err-mes">{{ confirmPasswordErr }}</div> -->
+
+    <label>Email</label>
+    <input formControlName="email" type="password" title="confirmPassword" />
+    <div class="err-mes">{{ confirmPasswordErr }}</div>
+
+    <label>First name</label>
+    <input formControlName="firstName" type="password" title="confirmPassword" />
+    <div class="err-mes">{{ confirmPasswordErr }}</div>
+
+    <label>Last name</label>
+    <input formControlName="lastName" type="password" title="confirmPassword" />
+    <div class="err-mes">{{ confirmPasswordErr }}</div>
+
+    <button mat-raised-button type="submit" class="sign-up-btn">Sign up</button>
+
+    <div class="sign-up-footer">
+      <!-- <button mat-button  type="button">Forgot password</button> -->
+
+      <button mat-button (click)="signIn()" type="button">Back to sign in</button>
+    </div>
+  </form>
+</div>

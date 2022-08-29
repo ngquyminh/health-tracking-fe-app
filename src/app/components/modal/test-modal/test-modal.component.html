@@ -1,0 +1,99 @@
+<div class="atp-check">
+  <!-- HEAD -->
+  <div class="atp-check-head">
+    <!-- TITLE -->
+    <div class="atp-check-head-title-close">
+      <div class="atp-check-head-title">ATP Check</div>
+      <button class="atp-check-head-close-btn" (click)="cancel()">X</button>
+    </div>
+    <!-- PARTNUMBER -->
+    <div class="atp-check-head-pn">
+      <div class="partnumber">1234.567.890-001</div>
+      <div class="content">LOREM IPSUM</div>
+    </div>
+    <!-- MENU -->
+    <div class="atp-check-head-filter-menu">
+      <div class="filter">Filter:</div>
+
+      <!--  LEVELS -->
+      <div *ngFor="let item of levels" class="level">
+        <mat-checkbox [(ngModel)]="item.completed" color="primary">
+          {{ item.name }}
+        </mat-checkbox>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="divider"></div>
+
+      <!-- RADIO BUTTONS -->
+      <mat-radio-group class="radio-gr" [(ngModel)]="componentPriority">
+        <mat-radio-button
+          class="radio-button"
+          *ngFor="let item of componentPriorityData; index as idx"
+          [value]="item"
+        >
+          {{ item }}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <!-- DIVIDER -->
+      <div class="divider"></div>
+
+      <button class="icon-btn err-only">
+        <div class="icon-btn-ic">&#xe8a1;</div>
+        Error only
+      </button>
+
+      <!-- DIVIDER -->
+      <div class="divider"></div>
+
+      <button class="icon-btn reload-res">
+        <div class="icon-btn-ic">&#xe8a1;</div>
+        Reload Result
+      </button>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="atp-check-body">
+    <div class="atp-check-body-left">
+      <div class="atp-check-body-title">Materials</div>
+      <div class="atp-check-body-left-material-list">
+        <!-- SEARCH BOX -->
+        <!-- [style.width]="materialList?.nativeElement.offsetWidth - 24 + 'px'" -->
+        <div class="search-box" [style.width]="materialListWidth">
+          <input
+            matInput
+            class="search-query"
+            placeholder="Search for Material Number"
+            [(ngModel)]="searchMaterial"
+          />
+          <div class="icon-btn-ic">&#xe235;</div>
+        </div>
+
+        <!-- MATERIAL LIST -->
+        <div class="material-list" id="materialList">
+          <div *ngFor="let item of materials; index as idx">
+            <app-material-item
+              [data]="item"
+              (materialItemClick)="materialItemClick($event)"
+              [isSelected]="selectedMaterial.partNumber === item.partNumber"
+            ></app-material-item>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="atp-check-body-right">
+      <!-- LOCATIONS -->
+      <div class="atp-check-body-title">Locations</div>
+      <!-- LOCATION LIST -->
+      <div *ngFor="let level of materialLevels; index as idx">
+        <app-material-item
+          [level]="idx + 1"
+          [lvData]="level"
+        ></app-material-item>
+      </div>
+    </div>
+  </div>
+</div>

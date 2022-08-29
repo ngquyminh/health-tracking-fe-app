@@ -1,0 +1,13 @@
+
+
+.inner-footer {
+  height: 3rem;
+  background-color: white;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  &-copy-right{
+    font-weight: bold;
+  }
+}

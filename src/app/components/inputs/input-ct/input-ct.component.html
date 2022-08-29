@@ -1,0 +1,14 @@
+<div class="input-ct">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>{{ title }}</mat-label>
+    <input
+      matInput
+      #inputPointer
+      type="text"
+      (input)="onChange()"
+      [placeholder]="placeholder"
+      [(ngModel)]="ngModel"
+      name="input-ct"
+    />
+  </mat-form-field>
+</div>

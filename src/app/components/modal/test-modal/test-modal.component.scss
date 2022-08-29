@@ -1,0 +1,133 @@
+.atp-check {
+  &-head {
+    &-title-close {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #8a9097;
+    }
+    &-title {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    &-pn {
+      margin-top: 16px;
+      .partnumber {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 34px;
+      }
+      .content {
+        margin-top: 8px;
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+    &-filter-menu {
+      margin-top: 24px;
+      background: #eff1f2 0% 0% no-repeat padding-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 52px;
+      padding: 0 10px;
+      .filter {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      .level {
+        margin-left: 36px;
+      }
+      .divider {
+        background-color: #d3d6da;
+        height: 22px;
+        width: 1px;
+        margin: 0 0 0 14px;
+      }
+      .radio-gr {
+      }
+      .radio-button {
+        margin-left: 16px;
+      }
+      .icon-btn {
+        margin-left: 16px;
+        padding: 0%;
+        outline: none;
+        border: none;
+        display: flex;
+        font-size: 16px;
+        line-height: 22px;
+        &-ic {
+          margin-right: 4px;
+        }
+      }
+      .err-only {
+        color: #e20015;
+      }
+      .reload-res {
+        color: #007bc0;
+      }
+    }
+  }
+
+  &-body {
+    // flex: 10;
+    display: flex;
+    flex-direction: row;
+    &-title {
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    &-left,
+    &-right {
+      display: flex;
+      flex-direction: column;
+    }
+    &-left {
+      // flex: 4;
+      width: 40%;
+      border-right: 1px solid #c7ccd0;
+      &-material-list {
+        display: flex;
+        flex-direction: column;
+        // padding-right: 24px;
+        .search-box {
+          // width: calc(100% - 45px);
+          // width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          min-height: 48px;
+          height: 48px;
+          background-color: #e0e2e5;
+          padding: 0 12px;
+          border-bottom: 1px solid #525f6b;
+        }
+        .search-query {
+          outline: none;
+          border: none;
+          background-color: transparent;
+          font-size: 16px;
+          line-height: 22px;
+          flex: 1;
+        }
+        .material-list {
+          overflow: auto;
+          height: 300px;
+          padding-right: 24px;
+        }
+      }
+    }
+    &-right {
+      width: 60%;
+      // flex: 6;
+      padding: 0 20px;
+    }
+  }
+}

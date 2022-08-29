@@ -1,0 +1,65 @@
+<div class="home">
+  <div class="home-body">
+    <div class="home-body-wrapper">
+      <div class="home-body-row-1">
+        <!-- <img
+          src="assets/scanning.svg"
+          class="scanning blink-me"
+          title="Scanning"
+        />
+        <button
+          (click)="syncData()"
+          type="button"
+          class="home-body-sync-btn"
+          mat-button
+        >
+          <img
+            src="assets/sync_1.png"
+            title="Sync icon"
+            class="home-body-sync-icon"
+          />
+        </button> -->
+      </div>
+
+      <div class="home-body-title mt-32">
+        <b style="color: #B25068;">Statistic Records:</b>
+      </div>
+
+      <div class="home-body-row-2">
+        <div class="home-body-row-2-left">
+          <app-step-card class="h-100" [data]="stepData"></app-step-card>
+          <app-bmi-card class="h-100 ml-24"></app-bmi-card>
+        </div>
+        <div class="flex">
+          <div
+            *ngFor="let item of statisticRecords; index as idx"
+            class="home-body-statistic-record"
+          >
+            <app-statistic-record-card
+              [data]="item"
+              [class]="idx !== 0 ? 'ml-32' : ''"
+            ></app-statistic-record-card>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-body-row-3">
+        <div class="home-body-title">
+          <b style="color: #B25068;">Activities:</b>
+        </div>
+        <div class="for-wrapper">
+          <div
+            *ngFor="let item of activities; index as idx"
+            class="home-body-activities"
+          >
+            <app-statistic-record-card
+              [data]="item"
+              [class]="'mr-32'"
+            ></app-statistic-record-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <app-inner-footer></app-inner-footer> -->
+</div>

@@ -1,0 +1,81 @@
+<div class="statistic-record-card" (click)="onCardClick()">
+  <div class="statistic-record-card-head">
+    <container-element [ngSwitch]="type">
+      <img class="statistic-record-card-head-image"
+        *ngSwitchCase="BLOOD_SUGAR"
+        src="assets/blood_sugar.svg"
+        title="Statistic Record"
+      />
+      <img class="statistic-record-card-head-image"
+        *ngSwitchCase="HEART_RATE"
+        src="assets/heart_rate.svg"
+        title="Heart rate Record"
+      />
+      <img class="statistic-record-card-head-image"
+        *ngSwitchCase="BLOOD_PRESSURE"
+        src="assets/blood_pressure.svg"
+        title="Statistic Record"
+      />
+      <img class="statistic-record-card-head-image" *ngSwitchCase="SLEEP" src="assets/sleeping.svg" title="Activity" />
+      <img class="statistic-record-card-head-image" *ngSwitchCase="CYCLING" src="assets/cycling.svg" title="Activity" />
+      <img class="statistic-record-card-head-image"
+        *ngSwitchCase="OTHER"
+        src="assets/other_activity.svg"
+        title="Activity"
+      />
+    </container-element>
+    <div class="statistic-record-card-head-title">
+      {{ title }}
+    </div>
+  </div>
+
+  <div class="statistic-record-card-body">
+    <div class="statistic-record-card-body-record">
+      <div class="statistic-record-card-body-value">
+        {{ record }}
+      </div>
+      <div class="statistic-record-card-body-content">
+        {{ content }}
+      </div>
+    </div>
+
+    <div class="statistic-record-card-body-status" [ngClass]="type || ''">
+      {{ status }}
+    </div>
+  </div>
+
+  <div class="statistic-record-card-graph">
+    <container-element [ngSwitch]="type">
+      <img
+        *ngSwitchCase="BLOOD_SUGAR"
+        src="assets/blood_sugar_graph.svg"
+        title="Statistic Record"
+      />
+      <img
+        *ngSwitchCase="HEART_RATE"
+        src="assets/heart_rate_graph.svg"
+        title="Heart rate Record"
+      />
+      <img
+        *ngSwitchCase="BLOOD_PRESSURE"
+        src="assets/blood_pressure_graph.svg"
+        title="Statistic Record"
+      />
+      <img
+        *ngSwitchCase="SLEEP"
+        src="assets/sleeping_graph.svg"
+        title="Statistic Record"
+      />
+      <img
+        *ngSwitchCase="CYCLING"
+        src="assets/cycling_graph.svg"
+        title="Statistic Record"
+      />
+      <img
+        *ngSwitchCase="OTHER"
+        src="assets/other_activity_graph.svg"
+        title="Statistic Record"
+      />
+    </container-element>
+  </div>
+</div>

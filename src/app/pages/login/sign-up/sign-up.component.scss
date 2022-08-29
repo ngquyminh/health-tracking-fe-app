@@ -1,0 +1,27 @@
+
+
+.sign-up {
+  width: 240px;
+  height: 100%;
+  animation: fadeInRight 0.4s;
+  &-form {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    margin-top: 0.25rem;
+  }
+  &-btn {
+    margin-top: 1rem;
+  }
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    button {
+      color: white;
+      // padding: 0.25rem;
+      padding: 0;
+    }
+  }
+}
